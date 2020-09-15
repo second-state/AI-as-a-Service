@@ -23,6 +23,7 @@ $ cargo install --path .
 ## Build the WASM bytecode
 
 ```
+# Go to the nodejs/mobilenet_std directory
 $ ssvmup build
 ```
 

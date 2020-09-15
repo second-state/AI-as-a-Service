@@ -23,6 +23,7 @@ $ cargo install --path .
 ## Build the WASM bytecode
 
 ```
+# Go to the nodejs/face_detection_service directory
 $ ssvmup build
 ```
 
