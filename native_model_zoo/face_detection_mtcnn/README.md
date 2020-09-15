@@ -17,14 +17,13 @@ $ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 To install from the public repo, do this.
 
 ```bash
-$ sudo cargo install face_detection_mtcnn
+$ cargo install face_detection_mtcnn
 ```
 
 To install from the local source, do this.
 
 ```bash
-$ cargo build --release
-$ sudo cp target/release/face_detection_mtcnn /usr/bin/
+$ cargo install --path .
 ```
 
 Note: If error occurs when building, try to update `rustup`.
