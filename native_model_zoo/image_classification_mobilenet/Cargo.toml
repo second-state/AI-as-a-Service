@@ -1,0 +1,18 @@
+[package]
+name = "image_classification_mobilenet"
+version = "0.1.0"
+authors = ["Michael Yuan <michael@secondstate.io>"]
+edition = "2018"
+repository = "https://github.com/second-state/AI-as-a-Service"
+homepage = "https://github.com/second-state/AI-as-a-Service/native_model_zoo/image_classification_mobilenet"
+readme = "README.md"
+description = "This application is designed to be used as a command from a WebAssembly function running inside the SSVM to perform native tensorflow operations. Please see documentation for more details."
+license = "MIT OR Apache-2.0"
+keywords = ["tensorflow", "webassembly", "imagenet", "mobilenet"]
+
+[dependencies]
+tensorflow = "0.16.0"
+serde_json = "1.0"
+
+[install]
+root = "/usr/bin"
