@@ -1,6 +1,6 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
-const { infer } = require('../pkg/face_detect_service_lib.js');
+const { infer } = require('../pkg/face_detection_service_lib.js');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
@@ -25,7 +25,7 @@ app.post('/infer', function (req, res) {
 
   let image_file = req.files.image_file;
   var result_filename = uuidv4() + ".png";
-  fs.writeFileSync("public/" + result_filename, infer(req.detection_threshold, image_file.data));
+  fs.writeFileSync("public/" + result_filename, infer(req.body.detection_threshold, image_file.data));
   res.send('<img src="' +  result_filename + '"/>');
 
   // res.contentType('image/png');

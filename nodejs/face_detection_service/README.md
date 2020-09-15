@@ -7,8 +7,7 @@ Follow the instructions to [setup Rust and WebAssembly tools in Node.js](https:/
 Next, install the necessary NPM packages.
 
 ```
-$ npm i express-fileupload
-$ npm i uuid
+$ npm i express express-fileupload uuid
 ```
 
 Finally, you need to install dependencies for the face detection Tensorflow model library.
@@ -17,7 +16,7 @@ Finally, you need to install dependencies for the face detection Tensorflow mode
 $ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 $ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 
-$ sudo cargo install face_detection_mtcnn
+$ cargo install face_detection_mtcnn
 ```
 
 ## Build the WASM bytecode
