@@ -16,7 +16,8 @@ Finally, you need to install dependencies for the face detection Tensorflow mode
 $ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 $ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 
-$ cargo install face_detection_mtcnn
+$ cd ../../native_model_zoo/face_detection_mtcnn
+$ cargo install --path .
 ```
 
 ## Build the WASM bytecode
@@ -41,6 +42,6 @@ $ cd node
 $ node server.js
 ```
 
-Then you can access the service at `http://host:8080/index.html`. Try upload an image with faces and see the result in your browser!
+Then you can access the service at `http://host:8080/`. Try upload an image with faces and see the result in your browser!
 
 
