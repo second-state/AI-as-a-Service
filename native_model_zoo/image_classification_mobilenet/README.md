@@ -1,4 +1,4 @@
-# ImageNet MobileNet standard model wrapper
+# ImageNet MobileNet custom model wrapper
 
 This application is designed to be used as a `command` from a WebAssembly function running inside the SSVM to perform native tensorflow operations.
 It is NOT designed for direct command line use.
