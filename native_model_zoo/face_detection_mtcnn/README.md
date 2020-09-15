@@ -14,12 +14,6 @@ $ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 
 ## Build and install
 
-To install from the public repo, do this.
-
-```bash
-$ cargo install face_detection_mtcnn
-```
-
 To install from the local source, do this.
 
 ```bash
