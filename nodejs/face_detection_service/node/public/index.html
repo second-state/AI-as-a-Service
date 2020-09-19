@@ -13,6 +13,14 @@
 
     <script>
 $(function() {
+    var uploadField = document.getElementById("image_file");
+    uploadField.onchange = function() {
+      if(this.files[0].size > 500000){
+        alert("Image is too large. Must be 500KB or less. If you are uploading from a phone, select the Medium or Small image size.");
+        this.value = "";
+      };
+    };
+
     var options = {
       target: '#result',
       url: "/infer",
@@ -31,7 +39,7 @@ function enableButton(responseText, statusText, xhr, $form)  {
   <body>
     <div class="container">
 
-      <h1>What's on the image?</h1>
+      <h1>Find all faces</h1>
       <p class="lead">Face detection as a service powered by Rust, Tensorflow, and Node.js.</p>
 
       <form id="infer" enctype="multipart/form-data">
