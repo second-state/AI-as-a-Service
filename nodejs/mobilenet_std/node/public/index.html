@@ -13,6 +13,14 @@
 
     <script>
 $(function() {
+    var uploadField = document.getElementById("image_file");
+    uploadField.onchange = function() {
+      if(this.files[0].size > 500000){
+        alert("Image is too large. Must be 500KB or less. If you are uploading from a phone, select the Medium or Small image size.");
+        this.value = "";
+      };
+    };
+
     var options = {
       target: '#result',
       url: "/infer",
