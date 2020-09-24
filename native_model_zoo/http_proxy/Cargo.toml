@@ -1,0 +1,17 @@
+[package]
+name = "http_proxy"
+version = "0.1.0"
+authors = ["Michael Yuan <michael@secondstate.io>"]
+edition = "2018"
+repository = "https://github.com/second-state/AI-as-a-Service"
+homepage = "https://github.com/second-state/AI-as-a-Service/native_model_zoo/http_proxy"
+readme = "README.md"
+description = "This application is designed to be used as a command from a WebAssembly function running inside the SSVM to perform native HTTP and HTTPS network operations. Please see documentation for more details."
+license = "MIT OR Apache-2.0"
+keywords = ["http", "webassembly"]
+
+[dependencies]
+reqwest = { version = "0.10", features = ["json"] }
+tokio = { version = "0.2", features = ["full"] }
+serde = { version = "^1.0.59", features = ["derive"] }
+serde_json = "^1.0.51"
