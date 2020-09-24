@@ -8,7 +8,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<String> = env::args().collect();
     let method: &str = &args[1].to_lowercase();
     let url: &str = &args[2];
-    let headers: &str = &args[3];
+    let mut headers: &str = r#"{"Content-Type":"text/plain"}"#;
+    if args.len() > 3 {
+        headers = &args[3]; 
+    }
 
     let client = reqwest::Client::new();
     let mut rb : RequestBuilder = client.get(url);

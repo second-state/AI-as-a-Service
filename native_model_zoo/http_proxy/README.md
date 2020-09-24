@@ -1,28 +1,23 @@
 # Face detection model wrapper
 
-This application is designed to be used as a `command` from a WebAssembly function running inside the SSVM to perform native tensorflow operations.
-It is NOT designed for direct command line use.
+This application is designed to be used as a `command` from a WebAssembly function running inside the SSVM to perform native network operations.
 
-## Install tensorflow
+## Examples
 
-[Follow the instructions](https://www.tensorflow.org/install/lang_c). On most Linux systems, just do the following.
+Simple GET
 
 ```bash
-$ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
-$ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
+$ echo "" | target/debug/http_proxy get http://scooterlabs.com/echo
 ```
 
-## Build and install
-
-To install from the local source, do this.
+GET with header
 
 ```bash
-$ cargo install --path .
+$ echo "" | target/debug/http_proxy get http://scooterlabs.com/echo '{"X-My-Custom-Header":"foo"}'
 ```
 
-Note: If error occurs when building, try to update `rustup`.
+POST with header and body
 
 ```bash
-$ rustup update nightly
-$ rustup update stable
+$ echo "123456789" | target/debug/http_proxy post http://scooterlabs.com/echo '{"X-My-Custom-Header":"foo"}'
 ```
