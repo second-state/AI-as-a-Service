@@ -1,10 +1,9 @@
 use std::env;
 use std::error::Error;
 use std::io::{self, Read, Write};
-use reqwest::RequestBuilder;
+use reqwest::blocking::RequestBuilder;
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<String> = env::args().collect();
     let method: &str = &args[1].to_lowercase();
     let url: &str = &args[2];
@@ -13,7 +12,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         headers = &args[3]; 
     }
 
-    let client = reqwest::Client::new();
+    let client = reqwest::blocking::Client::new();
     let mut rb : RequestBuilder = client.get(url);
     if method == "post" {
         rb = client.post(url);
@@ -28,8 +27,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
     io::stdin().read_to_end(&mut buffer)?;
     rb = rb.body(buffer);
 
-    let resp = rb.send().await?;
-    io::stdout().write_all(&resp.bytes().await?)?;
+    let resp = rb.send();
+    // println!("{}", resp.unwrap().text().unwrap());
+    io::stdout().write_all(&resp.unwrap().bytes().unwrap())?;
 
     Ok(())
 }
