@@ -1,5 +1,5 @@
 [package]
-name = "image_classification_mobilenet"
+name = "mobilenet_v2"
 version = "0.1.0"
 authors = ["Michael Yuan <michael@secondstate.io>"]
 edition = "2018"
@@ -13,6 +13,3 @@ keywords = ["tensorflow", "webassembly", "imagenet", "mobilenet"]
 [dependencies]
 tensorflow = "0.16.0"
 serde_json = "1.0"
-
-[install]
-root = "/usr/bin"

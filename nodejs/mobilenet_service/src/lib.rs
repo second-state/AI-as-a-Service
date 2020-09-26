@@ -12,7 +12,7 @@ pub fn infer(model_data: &[u8], label_data: &[u8], image_data: &[u8]) -> String 
 
     // Flatten image.
     println!("Preparing command ...");
-    let mut cmd = Command::new("image_classification_mobilenet");
+    let mut cmd = Command::new("mobilenet_v2");
     cmd.arg(model_data.len().to_string())
         .arg("input")
         .arg("MobilenetV2/Predictions/Softmax")
