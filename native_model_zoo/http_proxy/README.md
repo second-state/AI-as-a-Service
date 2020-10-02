@@ -1,4 +1,4 @@
-# Face detection model wrapper
+# HTTP proxy for WebAssembly
 
 This application is designed to be used as a `command` from a WebAssembly function running inside the SSVM to perform native network operations.
 
