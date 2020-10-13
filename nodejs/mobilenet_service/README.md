@@ -24,7 +24,7 @@ $ cargo install --path .
 
 ```
 # Go to the nodejs/mobilenet_service directory
-$ ssvmup build
+$ ssvmup build --enable-aot
 ```
 
 ## Test

@@ -16,15 +16,14 @@ Finally, you need to install dependencies for the face detection Tensorflow mode
 $ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 $ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
 
-$ cd ../../native_model_zoo/image_classification_mobilenet_v2_14_224
-$ cargo install --path .
+$ cargo install mobilenet_v2
 ```
 
 ## Build the WASM bytecode
 
 ```
 # Go to the nodejs/mobilenet_std directory
-$ ssvmup build
+$ ssvmup build --enable-aot
 ```
 
 ## Test
