@@ -14,7 +14,8 @@ Finally, you need to install dependencies for the face detection Tensorflow mode
 
 ```
 $ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
-$ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
+$ sudo tar -C /usr/local -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
+$ sudo ldconfig
 
 $ cd ../../native_model_zoo/face_detection_mtcnn
 $ cargo install --path .

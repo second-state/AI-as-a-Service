@@ -9,7 +9,8 @@ It is NOT designed for direct command line use.
 
 ```bash
 $ wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
-$ sudo tar -C /usr/ -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
+$ sudo tar -C /usr/local -xzf libtensorflow-gpu-linux-x86_64-1.15.0.tar.gz
+$ sudo ldconfig
 ```
 
 ## Build and install
